@@ -1,0 +1,22 @@
+{
+  "name": "@zakyyy/hor-slider",
+  "version": "1.0.0",
+  "description": "horizontal slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "16.11.0",
+    "react-native": "0.62.2"
+  },
+  "author": "",
+  "repository": {
+    "url": "git://github.com/zakyyy/hor-slider.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react-native-star-view": "^1.1.3"
+  }
+}
