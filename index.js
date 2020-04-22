@@ -40,24 +40,32 @@ export default class HorizontalSlider extends React.Component {
   }
   render() {
     return (
-      // using the traditional react native flat list and specifying the needed props
-      <FlatList
-        // the all props here to give the package's user the ability to pass further more flatlist props
-        {...this.props}
-        data={this.props.data}
-        keyExtractor={({ id }) => id}
-        renderItem={this.renderItem.bind(this)}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-      />
+      <View>
+        {/* component title, if it is supported add it if not remove it's section */}
+        {this.props.title && <Text style={styles.flatListTitleStyle}>{this.props.title}</Text>}
+
+        {/* using the traditional react native flat list and specifying the needed props */}
+        <FlatList
+          // the all props here to give the package's user the ability to pass further more flatlist props
+          {...this.props}
+          data={this.props.data}
+          keyExtractor={({ id }) => id}
+          renderItem={this.renderItem.bind(this)}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
+      </View>
     )
   }
 }
 
 /* using propTypes package to warn the package's user about some props and
- here stating that the data prop is required in order to use the package */
+ here stating that the data prop is required in order to use the package 
+ title prop is a string should be supplied if the package's user wants to add a title to the list component
+ */
 HorizontalSlider.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  title: PropTypes.string
 };
 
 
@@ -82,6 +90,11 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     marginRight: 20
+  },
+  flatListTitleStyle: {
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontSize: 18
   }
 })
 
