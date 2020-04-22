@@ -8,13 +8,13 @@ export default class HorizontalSlider extends React.Component {
     return (
       /*
         The main wrapper component is touchable opacity which is a button so that,
-        when the user presses on any part of the item it shows the alert with the image url
+        when the user presses on any part of the item it shows an alert with Url
        */
       <TouchableOpacity
         key={item.id}
         style={styles.buttonStyle}
-        // if the image url doesnot exist show just a url word
-        onPress={() => Alert.alert('', item.image.uri ? `${item.image.uri}` : 'URL')}
+        // onPress show just a url word
+        onPress={() => Alert.alert('', 'URL')}
       >
         {/* image component to show the listing image */}
         <Image
